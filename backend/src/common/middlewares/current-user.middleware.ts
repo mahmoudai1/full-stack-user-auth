@@ -1,7 +1,7 @@
 import { Injectable, NestMiddleware, UnauthorizedException } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 import { UsersService } from '../../users/users.service';
-import { User } from 'schemas/user.schema';
+import { User } from 'src/schemas/user.schema';
 
 declare global {
   namespace Express {

@@ -3,7 +3,7 @@ import { ApiCustomResponse } from '../common/decorators/api-response.decorator';
 import { UserDto } from './DTOs/user.dto';
 import { Serialize } from '../common/decorators/serialize.decorator';
 import { AuthService } from './auth/auth.service';
-import { UserDocument } from 'schemas/user.schema';
+import { UserDocument } from 'src/schemas/user.schema';
 import { RegisterDto } from './DTOs/register.dto';
 import { LoginDto } from './DTOs/login.dto';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
