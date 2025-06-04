@@ -23,7 +23,7 @@ docker-compose up --build
 #### 6. Swagger for APIs Doc. `/api/docs`
 #### 7. Loggings `/logs`
 #### 8. Implemented Customs for (Interceptors, Middlewares, Guards, decorators, and filters) <br/>
-- ResponseHandler, ErrorsHandler, ResponseSerializer, Auth, and more. <br/>
+- ResponseHandler, ErrorsHandler, ResponseSerializer, Auth, and more.. <br/>
 <br/>
 
 ## Frontend:
