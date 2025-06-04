@@ -4,7 +4,7 @@
 
 ## Run 
 ``` 
-docker-compose up --build up
+docker-compose up --build
 ```
 <br/>
 
