@@ -16,7 +16,7 @@ docker-compose up --build
 - login, register, user <br/>
 
 #### 3. APIs <br/>
-- `/signin`, `/signup`, `/logout`, `/me`, `/dashboard` (Protected) <br/>
+- `/signin`, `/signup`, `/logout`, `/dashboard`(Protected) <br/>
 
 #### 4. Cookie Session for server-side auth <br/>
 #### 5. 10 Unit Tests<br/>
@@ -27,7 +27,9 @@ docker-compose up --build
 <br/>
 
 ## Frontend:
-#### 1. Signin, Signup, and Home Page (Protected)
+#### 1. Pages - Signin, Signup, and Home(Protected)
 #### 2. Reusable Components
 #### 3. ProtectedRoute with AuthContext
-#### 4. Used react-hook-form, react-query, zod, and react-reactive-storage
+#### 4. Implemented a secure and dynamic ApiHandler
+#### 5. Used react-hook-form, react-query, zod, and react-reactive-storage
+
