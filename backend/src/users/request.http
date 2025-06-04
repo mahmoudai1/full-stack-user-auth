@@ -1,0 +1,31 @@
+### Create User
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+  "name": "Mahmoud",
+  "email": "mahmoud13904@gmail.com",
+  "password": "12345678l$",
+  "confirmPassword": "12345678l$"
+}
+
+### Login User
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+  "email": "mahmoud26@gmail.com",
+  "password": "12345678l$"
+}
+
+### Signout User
+POST http://localhost:3000/auth/signout
+Content-Type: application/json
+
+### Get Dashboard
+GET http://localhost:3000/dashboard/
+Content-Type: application/json
+
+### Get Current User
+GET http://localhost:3000/auth/me
+Content-Type: application/json
