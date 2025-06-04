@@ -1,7 +1,9 @@
-import { createContext, useContext, ReactNode, useState, useCallback } from 'react';
+import { createContext, useContext, ReactNode, useCallback } from 'react';
 import { useMutationRequest } from '../hooks/useMutationRequest';
 import { toast } from 'react-toastify';
 import { IUser } from '../models/interfaces/IUser';
+import { useNavigate } from 'react-router-dom';
+import { useLsState } from 'react-reactive-storage';
 
 const LOCAL_STORAGE_USER_KEY = import.meta.env.LOCAL_STORAGE_USER_KEY || 'auth_user';
 
@@ -11,38 +13,28 @@ interface AuthContextType {
   signUp: (name: string, email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 }
-
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<IUser | null>(() => {
-    try {
-      const storedUser = localStorage.getItem(LOCAL_STORAGE_USER_KEY);
-      return storedUser ? JSON.parse(storedUser) : null;
-    } catch (error) {
-      console.error('Error parsing stored user:', error);
-      localStorage.removeItem(LOCAL_STORAGE_USER_KEY);
-      return null;
-    }
-  });
+  const navigate = useNavigate();
+  
+  const [user, setUser] = useLsState<IUser | null>(LOCAL_STORAGE_USER_KEY, null);
 
   const signInMutation = useMutationRequest<{ data: IUser }>('/auth/signin', 'POST', {
     onSuccess: (response) => {
       setUser(response.data);
-      localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(response.data));
       toast.success('Signed in successfully!');
     },
     onError: (error: unknown) => {
       setUser(null);
-      localStorage.removeItem(LOCAL_STORAGE_USER_KEY);
       toast.error(error instanceof Error ? error.message : 'Something went wrong');
     },
   });
 
   const signUpMutation = useMutationRequest<IUser>('/auth/signup', 'POST', {
-    onSuccess: (data) => {
-      setUser(data);
+    onSuccess: () => {
       toast.success('Account created successfully!');
+      navigate('/signin');
     },
     onError: (error: unknown) => {
       toast.error(error instanceof Error ? error.message : 'Something went wrong');
@@ -52,7 +44,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signOutMutation = useMutationRequest('/auth/signout', 'POST', {
     onSuccess: () => {
       setUser(null);
-      localStorage.removeItem(LOCAL_STORAGE_USER_KEY);
       toast.success('Signed out successfully!');
     },
   });
