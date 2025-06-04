@@ -1,5 +1,5 @@
 # Full Stack User Auth App.
-### Built Using React, Nest.js, and MongoDB (With Mongoose ODM)
+### Built Using React, Nest.js, and MongoDB (Mongoose ODM)
 <br/>
 
 ## Run 
