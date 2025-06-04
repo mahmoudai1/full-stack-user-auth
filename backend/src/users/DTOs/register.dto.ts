@@ -26,9 +26,9 @@ export class RegisterDto {
   })
   password: string;
 
-  @IsString()
-  @IsNotEmpty()
-  @MinLength(8)
-  @Match('password', { message: 'Passwords do not match' })
-  confirmPassword: string;
+  // @IsString()
+  // @IsNotEmpty()
+  // @MinLength(8)
+  // @Match('password', { message: 'Passwords do not match' })
+  // confirmPassword: string;
 }
