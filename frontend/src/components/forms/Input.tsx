@@ -33,9 +33,9 @@ const Input = forwardRef<HTMLInputElement | HTMLTextAreaElement, InputProps>(
     ref
   ) => {
     const baseInputClasses =
-      'block w-full rounded-lg bg-white px-3 py-1.5 text-gray-900 text-sm/6 outline-1 -outline-offset-1 outline-gray-300 transition placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600';
+      'block w-full rounded-lg bg-gray-100 border px-3 py-1.5 text-gray-900 text-sm/6 outline-1 -outline-offset-1 outline-gray-300 transition placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-600';
     const baseLabelClasses =
-      'absolute -top-2 left-2 inline-block rounded-lg bg-white px-1 text-xs font-medium text-gray-900';
+      'absolute -top-2 left-2 inline-block rounded-lg bg-gray-100 px-1 text-xs font-medium text-gray-900';
 
     return (
       <div className={`relative ${className}`}>
