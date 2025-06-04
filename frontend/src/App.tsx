@@ -1,9 +1,9 @@
 import './index.css'
 import { Routes, Route } from 'react-router-dom'
 import { useAuth } from './contexts/AuthContext'
-import SignIn from './components/SignIn'
-import SignUp from './components/SignUp'
-import { ProtectedRoute } from './components/ProtectedRoute'
+import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
+import { ProtectedRoute } from './routes/ProtectedRoute'
 
 function App() {
   const { signOut } = useAuth();
