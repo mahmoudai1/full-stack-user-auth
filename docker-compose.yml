@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - '5173:5173'
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:3000/api
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - FRONTEND_URL=http://localhost
+      - PORT=3000
+      - MONGO_URI=mongodb://mongo:27017/full-stack-user-auth-mahmoudai1
+      - COOKIE_KEY=kn1OLji6qpr4Rk4Em
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:
