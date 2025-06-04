@@ -21,7 +21,7 @@ services:
     environment:
       - NODE_ENV=development
       - FRONTEND_URL=http://localhost:5173
-      - PORT=3000
+      - PORT=3001
       - MONGO_URI=mongodb://mongo:27017/full-stack-user-auth-mahmoudai1
       - COOKIE_KEY=kn1OLji6qpr4Rk4Em
     depends_on:
@@ -30,7 +30,7 @@ services:
   mongo:
     image: mongo:latest
     ports:
-      - '27017:27017'
+      - '27018:27017'
     volumes:
       - mongodb_data:/data/db
 
