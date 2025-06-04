@@ -7,7 +7,6 @@ export async function apiRequest<T>(
   method: HttpMethod = 'GET',
   body?: unknown
 ): Promise<T> {
-  console.log('apiRequest', endpoint, method, body);
   const url = `${API_URL}${endpoint}`;
 
   const response = await fetch(url, {
