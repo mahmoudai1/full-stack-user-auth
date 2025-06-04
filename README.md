@@ -21,7 +21,7 @@ docker-compose up --build
 #### 4. Cookie Session for server-side auth <br/>
 #### 5. 10 Unit Tests<br/>
 #### 6. Swagger for APIs Doc. `/api/docs`
-#### 7. Loggings `/api/docs`
+#### 7. Loggings `/logs`
 #### 8. Implemented Customs for (Interceptors, Middlewares, Guards, decorators, and filters) <br/>
 - ResponseHandler, ErrorsHandler, ResponseSerializer, Auth, and more. <br/>
 <br/>
