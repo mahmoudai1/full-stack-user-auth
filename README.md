@@ -31,5 +31,5 @@ docker-compose up --build
 #### 2. Reusable Components
 #### 3. ProtectedRoute with AuthContext
 #### 4. Implemented a secure and dynamic ApiHandler
-#### 5. Used react-hook-form, react-query, zod, and react-reactive-storage
+#### 5. Used react-hook-form, react-query, and zod
 
