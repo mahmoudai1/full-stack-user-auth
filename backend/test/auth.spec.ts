@@ -29,7 +29,7 @@ describe('Authentication', () => {
     save: jest.fn(),
   };
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [UsersController],
       providers: [
